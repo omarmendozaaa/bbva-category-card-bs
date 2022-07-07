@@ -38,7 +38,7 @@ export class BbvaCategoryCardBs extends LitElement {
   // Initialize properties
   constructor() {
     super();
-    this.colors = ["light", "secondary", "dark", "primary", "warning", "danger"];
+    this.colors = ["info", "secondary", "dark", "primary", "warning", "danger"];
   }
 
   static get styles() {
