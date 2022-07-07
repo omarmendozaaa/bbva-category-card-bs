@@ -24,10 +24,7 @@ export class BbvaCategoryCardBs extends LitElement {
   getData(data) {
     this.category = data;
   }
-  getColor(colors){
-    const randomcolor = Math.floor(Math.random() * colors.length);
-    return colors[randomcolor];
-  }
+
   // Declare properties
   static get properties() {
     return {
@@ -38,8 +35,6 @@ export class BbvaCategoryCardBs extends LitElement {
   // Initialize properties
   constructor() {
     super();
-    this.colors = ["dark", "primary", "warning", "danger"];
-    this.color = this.getColor(this.colors);
   }
 
   static get styles() {
@@ -52,9 +47,9 @@ export class BbvaCategoryCardBs extends LitElement {
   // Define a template
   render() {
     return html`
-    <div class="card text-white border-${this.color} mb-3" style="max-width: 12rem;">
-      <div class="card-header bg-${this.color} "></div>
-      <div class="card-body text-${this.color} ">
+    <div class="card text-white border-primary mb-3" style="max-width: 12rem;">
+      <div class="card-header bg-primary "></div>
+      <div class="card-body text-primary ">
         <h5 class="card-title text-center">${this.category.name}</h5>
       </div>
     </div>
