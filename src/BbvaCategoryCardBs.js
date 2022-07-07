@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit-element';
 import { getComponentSharedStyles } from '@bbva-web-components/bbva-core-lit-helpers';
 import styles from './BbvaCategoryCardBs-styles.js';
+import { colors } from '@bbva-web-components/bbva-foundations-styles';
 /**
 ![LitElement component](https://img.shields.io/badge/litElement-component-blue.svg)
 
@@ -23,6 +24,10 @@ export class BbvaCategoryCardBs extends LitElement {
   getData(data) {
     this.category = data;
   }
+  getColor(colors){
+    const randomcolor = Math.floor(Math.random() * colors.length);
+    return colors[randomcolor];
+  }
   // Declare properties
   static get properties() {
     return {
@@ -33,6 +38,7 @@ export class BbvaCategoryCardBs extends LitElement {
   // Initialize properties
   constructor() {
     super();
+    this.colors = ["light", "secondary", "dark", "primary", "warning", "danger"];
   }
 
   static get styles() {
@@ -45,7 +51,7 @@ export class BbvaCategoryCardBs extends LitElement {
   // Define a template
   render() {
     return html`
-    <div class="card text-white bg-primary mb-3" style="max-width: 12rem;">
+    <div class="card text-white bg-${this.getColor(this.colors)} mb-3" style="max-width: 12rem;">
       <div class="card-header"></div>
       <div class="card-body">
         <h5 class="card-title text-center">${this.category.name}</h5>
