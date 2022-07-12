@@ -29,6 +29,7 @@ export class BbvaCategoryCardBs extends LitElement {
   static get properties() {
     return {
       category: { type: Object },
+      isdetail: {type: Boolean}
     };
   }
 
@@ -46,7 +47,11 @@ export class BbvaCategoryCardBs extends LitElement {
 
   // Define a template
   render() {
-    return html`
+    return this.isdetail ?
+    html `
+    <span class="badge bg-primary">${this.category.name}</span>
+    `:
+    html`
     <div class="card text-white border-primary mb-3" style="max-width: 12rem;">
       <div class="card-header bg-primary "></div>
       <div class="card-body text-primary ">
