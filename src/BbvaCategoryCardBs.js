@@ -36,6 +36,7 @@ export class BbvaCategoryCardBs extends LitElement {
   // Initialize properties
   constructor() {
     super();
+    this.isdetail = false;
   }
 
   static get styles() {
