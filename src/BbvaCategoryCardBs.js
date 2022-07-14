@@ -45,15 +45,23 @@ export class BbvaCategoryCardBs extends LitElement {
       getComponentSharedStyles('bbva-category-card-bs-shared-styles'),
     ];
   }
-
+  _categoryEvent(item) {
+    this.dispatchEvent(
+      new CustomEvent('id-category-event', {
+        bubbles: true,
+        composed: true,
+        detail: item
+      })
+    );
+  }
   // Define a template
   render() {
     return this.isdetail ?
     html `
-    <span class="badge bg-primary ms-1">${this.category.name}</span>
+    <a href="#" class="badge bg-primary ms-1" @click=${() => this._categoryEvent(this.category.id)}>${this.category.name}</a>
     `:
     html`
-    <div class="card text-white border-primary mb-3" style="max-width: 12rem;">
+    <div class="card text-white border-primary mb-3" style="max-width: 12rem;" @click=${() => this._categoryEvent(this.category.id)}>
       <div class="card-header bg-primary "></div>
       <div class="card-body text-primary ">
         <h5 class="card-title text-center">${this.category.name}</h5>
