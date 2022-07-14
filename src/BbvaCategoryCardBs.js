@@ -50,7 +50,7 @@ export class BbvaCategoryCardBs extends LitElement {
   render() {
     return this.isdetail ?
     html `
-    <span class="badge bg-primary">${this.category.name}</span>
+    <span class="badge bg-primary ms-1">${this.category.name}</span>
     `:
     html`
     <div class="card text-white border-primary mb-3" style="max-width: 12rem;">
