@@ -58,7 +58,7 @@ export class BbvaCategoryCardBs extends LitElement {
   render() {
     return this.isdetail ?
     html `
-    <a href="#" class="badge bg-primary ms-1" @click=${() => this._categoryEvent(this.category.id)}>${this.category.name}</a>
+    <a href="#" class="badge bg-primary ms-1 text-decoration-none" @click=${() => this._categoryEvent(this.category.id)}>${this.category.name}</a>
     `:
     html`
     <div class="card text-white border-primary mb-3" style="max-width: 12rem;" @click=${() => this._categoryEvent(this.category.id)}>
