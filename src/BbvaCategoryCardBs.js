@@ -50,7 +50,7 @@ export class BbvaCategoryCardBs extends LitElement {
       new CustomEvent('id-category-event', {
         bubbles: true,
         composed: true,
-        detail: item.id
+        detail: item
       })
     );
   }
@@ -58,10 +58,10 @@ export class BbvaCategoryCardBs extends LitElement {
   render() {
     return this.isdetail ?
     html `
-    <a href="#" class="badge bg-primary ms-1" @click=${() => this._categoryEvent(this.category)}>${this.category.name}</a>
+    <a href="#" class="badge bg-primary ms-1" @click=${() => this._categoryEvent(this.category.id)}>${this.category.name}</a>
     `:
     html`
-    <div class="card text-white border-primary mb-3" style="max-width: 12rem;" @click=${() => this._categoryEvent(this.category)}>
+    <div class="card text-white border-primary mb-3" style="max-width: 12rem;" @click=${() => this._categoryEvent(this.category.id)}>
       <div class="card-header bg-primary "></div>
       <div class="card-body text-primary ">
         <h5 class="card-title text-center">${this.category.name}</h5>
